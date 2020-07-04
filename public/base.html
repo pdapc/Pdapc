@@ -14,17 +14,40 @@
            datatype:'html',
            success:function(data){},
            complete:function(XMLHttpRequest,textstatus){},
-           Error:function(){}
-           
+           Error:function(){}*/
 
-        });*/
+        $.ajax({
+            url:"https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation",
+            type:"POST",
+            crossDomain: true,
+            data:JSON.stringify(somejson),
+            dataType:"json",   
+            success:function(response){
+                var resp = JSON.parse(response)
+                alert(resp.status);
+            },
+            error:function(xhr,status){
+                   alert("error");
+            }
+               
+           });
+
+
+
+
+
+
+        
+        /*const cors ='https://cors-anywhere.herokuapp.com/';
+        const url ='https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation'; 
        $(function(){
             ajax_get();
        })
        function ajax_get(){
            $.ajax({
                type:'GET',
-               url:'https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation',
+               
+               url=url,
                error:function(){
                    alert("載入網頁錯誤");
                },
@@ -34,7 +57,13 @@
                }
                
            });
-       }
+       }*/
+
+
+
+
+
+
     </script>
     <style>
     </style>
