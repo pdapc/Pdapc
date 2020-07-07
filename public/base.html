@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
-    <script type="text/javascript" src="../juery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
     <script>
        /*var url = ("https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation");
     
@@ -20,7 +20,7 @@
         /*var somejson = { "name": "James" };  */
         $.ajax({
             url:"https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation",
-            type:"POST",
+            type:"GET",
             crossDomain: true,
             dataType:"json",   
             success:function(response){
@@ -28,7 +28,7 @@
                 alert(resp.status);
             },
             error:function(xhr,status){
-                   alert("error");
+                   alert(xhr,status);
             }
                
            });
