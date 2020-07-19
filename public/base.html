@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
-    <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" ></script>
     <script>
        /*var url = ("https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation");
-    
+        
        $.ajax({
            type: "POST",
            URL:url,
@@ -18,7 +19,7 @@
         /*var somejson;
         somejson=undefined;*/
         /*var somejson = { "name": "James" };  */
-        $.ajax({
+        /*$.ajax({
             url:"https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation",
             type:"GET",
             crossDomain: true,
@@ -28,27 +29,41 @@
                 alert(resp.status);
             },
             error:function(xhr,status){
-                   alert(xhr,status);
+                   alert(xhr.status);
             }
                
-           });
+           });*/
 
+           /*JSON.parse(x)
 
-
-
+           var x = {
+               "result":"ok","msg":"","data":[
+                   {
+                   "code":"0000","name":"台G電0號","isDone":null,"marketClass":null,"industryClass":null,"createdDate":null,"updatedDate":null
+                   },
+                   {"code":"0001","name":"台G電1號","isDone":null,"marketClass":null,"industryClass":null,"createdDate":null,"updatedDate":null
+                   },
+                   {"code":"0002","name":"台G電2號","isDone":null,"marketClass":null,"industryClass":null,"createdDate":null,"updatedDate":null
+                   },
+                   {"code":"0003","name":"台G電3號","isDone":null,"marketClass":null,"industryClass":null,"createdDate":null,"updatedDate":null
+                   },
+                   {"code":"0004","name":"台G電4號","isDone":null,"marketClass":null,"industryClass":null,"createdDate":null,"updatedDate":null
+                   }
+                ]
+            }*/
 
 
         
-        /*const cors ='https://cors-anywhere.herokuapp.com/';
-        const url ='https://sabalapeople.tk:48080/StockApi/testing/stock/recommendation'; 
+        const cors ='https://cors-anywhere.herokuapp.com/';
+        /*const url ='https://parks.taipei/parks/json/'; 
        $(function(){
             ajax_get();
-       })
-       function ajax_get(){
+       });
+       function ajax_get(){*/
            $.ajax({
                type:'GET',
                
-               url=url,
+               url:'https://parks.taipei/parks/json/',
                error:function(){
                    alert("載入網頁錯誤");
                },
@@ -57,11 +72,15 @@
                    $('#result').html(data);
                }
                
-           });
-       }*/
-
-
-
+            });
+        /*function getData(){
+            var req=new XMLHttpRequest();
+            req.open("get","https://parks.taipei/parks/json/");
+            req.onload=function(){
+                alert("載入網頁成功!");
+            };
+            req.send();
+        }  */
 
 
 
@@ -71,10 +90,7 @@
 </head>
 <body>
         <div>
-            <!--<input type="button" value="看看我唷" onclick="data"></button>*-->
-            <div data-role="content">
-                <div id="result">這裡顯示執行結果</div>
-            </div>
+            
         </div>
 </body>
 </html>
