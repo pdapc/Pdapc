@@ -35,7 +35,6 @@
            });*/
 
            /*JSON.parse(x)
-
            var x = {
                "result":"ok","msg":"","data":[
                    {
@@ -74,7 +73,7 @@
                
             });
         }*/
-        function getData(){
+        /*function getData(){
             var req=new XMLHttpRequest();
             req.open("get","https://randomuser.me/api/");
             req.onload=function(){
@@ -82,8 +81,17 @@
                 content.innerHTML=this.responseText;
             };
             req.send();
-        }  
-
+        }  */
+        $(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("https://randomuser.me/api/",function(responseTxt,statusTxt,xhr){
+      if(statusTxt=="success")
+        alert("外部内容加载成功！");
+      if(statusTxt=="error")
+        alert("Error: "+xhr.status+": "+xhr.statusText);
+    });
+  });
+});
 
 
     </script>
@@ -91,8 +99,7 @@
     </style>
 </head>
 <body>
-        <div>
-            <span onclick="getData();">熱門</span>
-        </div>
+    <div id="div1"><h2>使用 jQuery AJAX 来改变文本</h2></div>
+<button>获得外部内容</button>
 </body>
 </html>
